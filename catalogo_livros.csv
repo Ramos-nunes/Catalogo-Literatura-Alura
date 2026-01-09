@@ -1,10 +1,10 @@
-id;titulo;idioma;downloads;autor_id;autor_nome
-1;Dom Casmurro;pt;1238;1;Machado de Assis
-2;Wit and Wisdom of Don Quixote;en;769;2;Cervantes Saavedra, Miguel de
-3;Iracema: com uma noticia biographica do auctor;pt;405;3;Alencar, José Martiniano de
-4;Nova academia de pintura: dedicada às senhoras portuguezas que amão ou se applicão, ao estudo das Bellas Artes;pt;291;4;Machado, Cirilo Volkmar
-5;O Cortiço;pt;380;5;Azevedo, Aluísio
-6;Pride and Prejudice;en;79110;6;Austen, Jane
-7;The Odyssey: Rendered into English prose for the use of those who cannot read the original;en;20996;7;Homer
-8;The Iliad;en;24050;7;Homer
-9;Great Expectations;en;24243;8;Dickens, Charles
+   id;titulo;idioma;downloads;autor_id;autor_nome
+   1;Dom Casmurro;pt;1238;1;Machado de Assis
+   2;Wit and Wisdom of Don Quixote;en;769;2;Cervantes Saavedra
+   3;Iracema: com uma noticia biographica do auctor;pt;405;3;Alencar
+   4;Nova academia de pintura: dedicada às senhoras portuguezas que amão ou se applicão;;; 
+   5;O Cortiço;pt;380;5;Azevedo
+   6;Pride and Prejudice;en;79110;6;Austen
+   7;The Odyssey: Rendered into English prose for the use of those who cannot read the original;en;20996;7;Homer
+   8;The Iliad;en;24050;7;Homer
+   9;Great Expectations;en;24243;8;Dickens
