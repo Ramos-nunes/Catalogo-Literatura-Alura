@@ -1,0 +1,43 @@
+# =========================
+# IntelliJ & JetBrains
+# =========================
+.idea/
+*.iml
+out/
+
+# =========================
+# Maven build
+# =========================
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Arquivos temporários
+# =========================
+*.tmp
+*.swp
+*.swo
+*~
+*.bak
+
+# =========================
+# Windows
+# =========================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# =========================
+# macOS
+# =========================
+.DS_Store
