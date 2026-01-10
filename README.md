@@ -1,7 +1,6 @@
 # 📚 Catálogo de Literatura – Challenge Alura
 
-Catálogo de obras literárias, desenvolvido com Java, Spring Boot, Banco de Dados e API.
-Catálogo de livros com integração via API, persistência em banco de dados, filtros avançados, estatísticas e exportações para CSV.
+Catálogo de obras literárias, desenvolvido com Java, Spring Boot, utilizando boas práticas de Organização de Código, Separação em Camadas, Banco de Dados e API, Persistência em Banco de Dados, Filtros Avançados, Estatísticas, Documentação do Projeto e Exportações para CSV.
 
 ![Java](https://img.shields.io/badge/Java-17+-red)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen)
@@ -10,12 +9,21 @@ Catálogo de livros com integração via API, persistência em banco de dados, f
 
 ---
 
-## 📝 Sobre o Projeto
+## 🎯 Objetivo do Projeto
 Este projeto é o resultado do Challenge Backend Java que implementa um catálogo de livros e autores acessado via console, proposto pela **Alura**. A aplicação consome dados da API Gutendex, realiza a persistência em um banco de dados relacional e oferece ferramentas avançadas de análise e exportação.
-
 O objetivo é proporcionar uma experiência prática com o ecossistema Java moderno, focando em persistência de dados, integração com serviços externos e manipulação de arquivos.
 
-Esta aplicação permite:
+**Criar uma aplicação de catálogo literário**, acessada via console, que permita:
+* Buscar livros na API Gutendex pelo título
+* Selecionar um livro retornado pela API e salvar localmente
+* Consultar livros já cadastrados no banco
+* Consultar autores cadastrados
+* Listar autores vivos em determinado ano
+* Listar livros por idioma
+* Gerar estatísticas completas do catálogo
+* Exportar dados de livros e autores para arquivos CSV
+
+**O foco principal é praticar:**
 * **Consumir dados** de livros via API REST.
 * **Armazenar** livros e autores em um banco PostgreSQL.
 * **Consultar,filtrar e e explorar** informações diretamente pelo console.
@@ -31,12 +39,13 @@ Esta aplicação permite:
 
 * **Java 17+**
 * **Spring Boot 3**
+* **Maven** (Gerenciamento de dependências)
 * **Spring Data JPA**
 * **PostgreSQL**
-* **Jackson** (Manipulação de JSON)
-* **Maven** (Gerenciamento de dependências)
 * **API Gutendex** (Fonte de dados externa)
+* **Jackson** (Manipulação de JSON)
 * **IntelliJ IDEA**
+* **CSV para exportação de dados**
 
 ---
 
@@ -69,6 +78,27 @@ src/
 
 ```
 
+## ▶️ Como Executar o Projeto
+  
+**1. Pré-requisitos:**
+* Java JDK 17+
+* Maven
+* PostgreSQL (ou outro banco relacional configurado)
+* IntelliJ IDEA (opcional, mas recomendado)
+* Caso contrário realize a instalação de todos.
+
+**2. Clonar o repositório:** git clone https://github.com/Ramos-nunes/Catalogo-Literatura-Alura
+  
+**3. Entrar na pasta do projeto:** cd Catalogo-Literatura-Alura/literaturaCatalogo
+
+**4. Configure o banco de dados:** Ajuste as credenciais e URL do banco no arquivo application.properties (ou application.yml), conforme sua instalação do PostgreSQL.
+  
+**5. Executar o projeto:** mvn spring-boot:run
+
+**6. Interagir pelo console:** O menu principal será exibido no terminal, permitindo escolher as opções numéricas.
+
+---
+
 ## ⚙️ Configuração do Banco de Dados
 No arquivo `application.properties`:
 
@@ -99,8 +129,14 @@ A aplicação realiza:
 
 ---
 
-## 🧭 Menu Principal - Navegação (Console)
-O menu da aplicação permite as seguintes ações:
+## 🧭 Menu Principal - Navegação, Interface e Funcionalidades
+O **Menu Principal** foi projetado para ser intuitivo e oferecer uma navegação completa pelo acervo. Ele atua como o ponto central da aplicação, onde o usuário pode interagir com os dados vindos da API e persistidos no PostgreSQL.
+
+#### O menu permite realizar:
+* **Gestão de Conteúdo:** Busca e listagem de livros e autores em tempo real.
+* **Filtros Históricos:** Consulta avançada de autores com base em anos de nascimento, falecimento e período de atividade.
+* **Inteligência de Dados:** Ranking dos livros mais populares e estatísticas detalhadas do banco de dados.
+* **Interoperabilidade:** Exportação de todos os dados cadastrados para o formato CSV. 
 ```
 ==============================
       CATALOGO DE LITERATURA
@@ -130,22 +166,25 @@ O menu da aplicação permite as seguintes ações:
 
 [ SISTEMA ]
   0 - Sair
+
 ```
+Todas as operações são validadas e o sistema evita duplicações de livros e autores já cadastrados.
+
 ---
 
 ## 📊 Estatísticas (Opção 13)
-
 O sistema gera dados detalhados como:
 
 * **Total de livros cadastrados**
 * **Total de autores cadastrados**
-* **Total de obras por idiomas**  
+* **Total de livros por idiomas**  
 * **Ranking dos livros mais baixados**  
-* **Ranking dos livros menos baixado**  
+* **Ranking dos livros menos baixados**  
 * **Total geral de downloads**  
-* **Total de autor com mais obras**  
+* **Total de autor com mais livros**  
 * **Idiomas mais frequentes**
   
+Essas estatísticas demonstram o uso prático de Streams, consultas derivadas e agregações no Backend.  
 As estatísticas foram pensadas para entregar uma visão completa do **acervo API pública Gutendex.**  
 Saída completa, detalhada e pronta para gerar relatórios.
 
@@ -159,9 +198,12 @@ São gerados:
 - `Catálogo completo de Autores`
 
 Os arquivos CSV podem ser utilizados em:
-- UTF-8  
-- Seguro para Excel, Power BI, Python/Pandas, R e PostgreSQL.
-- Campos limpos (sem quebras de linha ou caracteres inválidos)
+* UTF-8  
+* Seguro para Excel/LibreOffice
+* Ferramentas de BI (Power BI, etc.)
+* Scripts Python/Pandas
+* R, SQL, e PostgreSQL e outros ambientes de Análise de dados
+* Campos limpos (sem quebras de linha ou caracteres inválidos)
 
 ---
 
@@ -194,27 +236,55 @@ id;nome;ano_nascimento;ano_falecimento;total_livros
 
 ---
 
-## ▶️ Como Executar o Projeto
-1. Certifique-se de ter o Java 17+ e o Maven instalados, caso contrário realize a instalação.
-2. Configure o banco de dados no PostgreSQL com o nome literatura.
-3. Clone o repositório: git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-4. Configure o `application.properties` e execute o projeto via IDE ou terminal atraves do comando: mvn spring-boot:run
-
-O menu principal será exibido no console.
-
----
-
 ## 📄 Challenge Original
 
-O PDF oficial do desafio está incluído no repositório, contendo:
-* Requisitos
-* Etapas
-* Regras do CRUD
-* Detalhes da API Gutendex
+O desafio proposto pela Alura nesse desafio inclui:
+
+* Estrutura de aprendizagem (Trello, Discord, etc.)
+* Pré‑requisitos de Java, Spring, Banco de Dados
+* Descrição da API Gutendex
+* Etapas do desafio (consumir API, persistência, consultas, extras)
+* Sugestões de funcionalidades adicionais (EXTRAS)
+* Orientações para documentação (README)
+* Passos para entrega e certificação.
 
 ---
 
-## 📌 Possíveis Melhorias Futuras
+## 📚 O que aprendi com este Projeto?
+Durante o desenvolvimento deste catálogo de literatura, pude praticar e consolidar:
+
+* Consumo de APIs REST com Java (HttpClient, HttpRequest, HttpResponse)
+* Manipulação de JSON com Jackson (ObjectMapper, @JsonAlias, @JsonIgnoreProperties)
+* Modelagem de entidades (Livro, Autor)
+* Persistência de dados com Spring Data JPA
+* Criação de repositórios e consultas derivadas
+* Uso de Streams e lambdas para filtrar, mapear e gerar estatísticas
+* Exportação de dados para CSV de forma padronizada
+* Organização de um projeto Spring Boot
+* Uso de Git e GitHub em um fluxo similar ao de uma empresa
+* Importância de um README bem escrito para portfólio
+* Manipulação de coleções (List, Map, Stream API)
+* Encapsulamento e boas práticas
+* Padronização de repositórios profissionais
+* Organização de projetos Java
+* Tratamento de erros e validações
+
+---
+
+## 🏁 Status do Projeto
+[x] Consumo da API Gutendex  
+[x] Cadastro de livros e autores  
+[x] Consultas principais (livros, autores, vivos em ano, idioma)  
+[x] Organização do repositório  
+[x] Documentação em README  
+[x] Estatísticas (básicas e/ou avançadas)  
+[x] Exportação para CSV  
+Projeto concluído para o Challenge Literatura, com possibilidades abertas para novas melhorias e funcionalidades extras.
+A aplicação funciona de ponta a ponta, com dados limpos, estatísticas funcionais e documentação profissional.
+
+---
+
+## 📌 Possíveis Melhorias Futuras neste Projeto
 
 - Filtros avançados adicionais  
 - Exportação em JSON  
@@ -223,28 +293,9 @@ O PDF oficial do desafio está incluído no repositório, contendo:
 
 ---
 
-## 🚀 O que eu aprendi com este projeto
-
-* Consumo de APIs REST com Java
-* Parsing de JSON
-* Manipulação de coleções (List, Map, Stream API)
-* Encapsulamento e boas práticas
-* Conversão de dados para CSV
-* Padronização de repositórios profissionais
-* Organização de projetos Java
-* Tratamento de erros e validações
-
----
-
-## 🏁 Status do Projeto
-Concluído com sucesso.
-A aplicação funciona de ponta a ponta, com dados limpos, estatísticas funcionais e documentação profissional.
-
----
-
 ## 📄 Licença
 
 Projeto aberto para estudo e evolução.  
 Uso livre para fins educacionais.  
-Caso queira trocar ideias sobre Java, backend ou melhorias:  
+Caso queira trocar ideias sobre Java, Backend ou melhorias no Projeto:  
 GitHub: https://github.com/Ramos-nunes
