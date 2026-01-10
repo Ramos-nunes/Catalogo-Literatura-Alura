@@ -1,4 +1,4 @@
-# 📚 Catálogo de Literatura – Challenge Alura
+# 📚 CATÁLOGO DE LITERATURA – CHALLENGE LITERALURA
 
 Catálogo de obras literárias, desenvolvido com Java, Spring Boot, utilizando boas práticas de Organização de Código, Separação em Camadas, Banco de Dados e API, Persistência em Banco de Dados, Filtros Avançados, Estatísticas, Documentação do Projeto e Exportações para CSV.
 
@@ -10,7 +10,7 @@ Catálogo de obras literárias, desenvolvido com Java, Spring Boot, utilizando b
 ---
 
 ## 🎯 Objetivo do Projeto
-Este projeto é o resultado do Challenge Backend Java que implementa um catálogo de livros e autores acessado via console, proposto pela **Alura**. A aplicação consome dados da API Gutendex, realiza a persistência em um banco de dados relacional e oferece ferramentas avançadas de análise e exportação.
+Este projeto é o resultado do Challenge Backend Java LiterAlura que implementa um catálogo de livros e autores acessado via console, proposto pela **Alura**. A aplicação consome dados da API Gutendex, realiza a persistência em um banco de dados relacional e oferece ferramentas avançadas de análise e exportação.
 O objetivo é proporcionar uma experiência prática com o ecossistema Java moderno, focando em persistência de dados, integração com serviços externos e manipulação de arquivos.
 
 **Criar uma aplicação de catálogo literário**, acessada via console, que permita:
